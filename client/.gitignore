@@ -22,5 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# api key
-./config/application.yml
+#api key
+../config/locales/application.yml
