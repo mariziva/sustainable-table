@@ -30,6 +30,7 @@ export default function ClippedDrawer({ user, setUser }) {
 
 
   return (
+
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
@@ -62,20 +63,21 @@ export default function ClippedDrawer({ user, setUser }) {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            <Button link={NewFood}>Add a food</Button>
+            <Button>Add a food</Button>
+            {/* href={NewFood} will go above*/}
           </List>
           <Divider />
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Typography paragraph>
+        {/* <Typography> */}
           <Foods />
-        </Typography>
+        {/* </Typography> */}
         <Divider />
-        <Typography paragraph>
+        {/* <Typography paragraph> */}
           <Recipes />
-        </Typography>
+        {/* </Typography> */}
       </Box>
     </Box>
   );
