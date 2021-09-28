@@ -127,6 +127,7 @@ export default function ClippedDrawer({ user, setUser }) {
               <input type="text" placeholder="name"
               value={foodName}
               onChange={(e) => setFoodName(e.target.value)}></input>
+              <button type="submit">Submit</button>
             </form>):(null)}
             {/* href={NewFood} will go above*/}
             <Divider />
