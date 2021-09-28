@@ -154,7 +154,7 @@ export default function ClippedDrawer({ user, setUser }) {
               onChange={(e) => setFoodQuantity(e.target.value)}>
               </input>
 
-              {/* finish adding inputs */}
+              {/* finish adding inputs with different types..look at phase 3 project for calendar reference */}
 
               <br />
               <button type="submit">Submit</button>
