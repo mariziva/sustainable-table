@@ -14,7 +14,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import NewFood from './NewFood'
 import Foods from './Foods'
 import Recipes from './Recipes'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const drawerWidth = 240;
 
@@ -28,6 +28,12 @@ export default function ClippedDrawer({ user, setUser }) {
   const [foodCategory, setFoodCategory] = useState(foods.category)
   const [foodDaysUntilExpiration, setFoodDaysUntilExpiration] = useState(foods.days_until_expiration)
   const [foodDateOfPurchase, setFoodDateOfPurchase] = useState(foods.date_of_purchase)
+
+  useEffect(() => {
+    fetch("/foods")
+      .then((r) => r.json())
+      .then(setfood);
+  }, []);
 
   function handleFoodUpdate (){
     //function stuff 

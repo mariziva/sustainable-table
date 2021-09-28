@@ -4,11 +4,7 @@ import Grid from "@mui/material/Grid"
 
 function Foods({ foods, setfood }){ 
 
-    useEffect(() => {
-        fetch("/foods")
-          .then((r) => r.json())
-          .then(setfood);
-      }, []);
+    
 
       const sortedFoods = foods.sort((a, b) => ((a.days_until_expiration) - (b.days_until_expiration)))
 
