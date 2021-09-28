@@ -124,9 +124,39 @@ export default function ClippedDrawer({ user, setUser }) {
           <List>
             <Button onClick={handleAddForm}>Add a food</Button>
             {addForm ? (<form onSubmit={handleSubmit}>
-              <input type="text" placeholder="name"
+              <input type="text"
+              placeholder="name"
               value={foodName}
-              onChange={(e) => setFoodName(e.target.value)}></input>
+              onChange={(e) => setFoodName(e.target.value)}>
+              </input>
+
+              <input type="text"
+              placeholder="unit"
+              value={foodUnit}
+              onChange={(e) => setFoodUnit(e.target.value)}>
+              </input>
+
+              <input type="text"
+              placeholder="category"
+              value={foodCategory}
+              onChange={(e) => setFoodCategory(e.target.value)}>
+              </input>
+
+              <input type="integer"
+              placeholder="days until expiration"
+              value={foodDaysUntilExpiration}
+              onChange={(e) => setFoodDaysUntilExpiration(e.target.value)}>
+              </input>
+
+              <input type="integer"
+              placeholder="quantity"
+              value={foodQuantity}
+              onChange={(e) => setFoodQuantity(e.target.value)}>
+              </input>
+
+              {/* finish adding inputs */}
+
+              <br />
               <button type="submit">Submit</button>
             </form>):(null)}
             {/* href={NewFood} will go above*/}
