@@ -22,12 +22,12 @@ export default function ClippedDrawer({ user, setUser }) {
 
   const [foods, setfood] = useState([])
   const [addForm, setAddForm] = useState(false)
-  const [foodName, setFoodName] = useState(foods.name)
-  const [foodQuantity, setFoodQuantity] = useState(foods.quantity)
-  const [foodUnit, setFoodUnit] = useState(foods.unit)
-  const [foodCategory, setFoodCategory] = useState(foods.category)
-  const [foodDaysUntilExpiration, setFoodDaysUntilExpiration] = useState(foods.days_until_expiration)
-  const [foodDateOfPurchase, setFoodDateOfPurchase] = useState(foods.date_of_purchase)
+  const [foodName, setFoodName] = useState("")
+  const [foodQuantity, setFoodQuantity] = useState("")
+  const [foodUnit, setFoodUnit] = useState("")
+  const [foodCategory, setFoodCategory] = useState("")
+  const [foodDaysUntilExpiration, setFoodDaysUntilExpiration] = useState("")
+  const [foodDateOfPurchase, setFoodDateOfPurchase] = useState("")
 
   useEffect(() => {
     fetch("/foods")
@@ -82,9 +82,9 @@ export default function ClippedDrawer({ user, setUser }) {
   setFoodName("")
   setFoodCategory("")
   setFoodUnit("")
-  setFoodDateOfPurchase("")
-  setFoodDaysUntilExpiration("")
-  setFoodQuantity("")
+  setFoodDateOfPurchase(new Date())
+  setFoodDaysUntilExpiration(0)
+  setFoodQuantity(1)
   }
 
 
@@ -153,6 +153,16 @@ export default function ClippedDrawer({ user, setUser }) {
               value={foodQuantity}
               onChange={(e) => setFoodQuantity(e.target.value)}>
               </input>
+
+              <br />
+              Date of Purchase:
+              <input type="datetime-local"
+              placeholder="date purchased"
+              value={foodDateOfPurchase}
+              onChange={(e) => {
+                setFoodDateOfPurchase(e.target.value)
+              }}>
+                </input>
 
               {/* finish adding inputs with different types..look at phase 3 project for calendar reference */}
 
