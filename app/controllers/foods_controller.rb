@@ -12,6 +12,26 @@ def create
     render json: food, status: :created
 end
 
+def update
+    food = Food.find(params[:id])
+    if food
+        food.update(food_params)
+        render json: food, status: :accepted
+    else
+        render json: {error:"Food not found"}, status: :not_found
+    end
+end
+
+def destroy
+    food = Food.find(params[:id])
+    if food
+        food.destroy
+        head :no_content
+    else
+        render json: {error:"Food not found"}, status: :not_found
+    end
+end
+
 private
 
 def food_params
