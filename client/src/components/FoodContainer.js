@@ -81,7 +81,6 @@ export default function ClippedDrawer({ user, setUser }) {
  
   }
 
-
   return (
 
     <Box sx={{ display: 'flex' }} >
@@ -158,12 +157,9 @@ export default function ClippedDrawer({ user, setUser }) {
               }}>
                 </input>
 
-              {/* finish adding inputs with different types..look at phase 3 project for calendar reference */}
-
               <br />
               <button type="submit">Submit</button>
             </form>):(null)}
-            {/* href={NewFood} will go above*/}
             <Divider />
             <Button>Find a random recipe</Button>
             <Divider />
@@ -181,7 +177,9 @@ export default function ClippedDrawer({ user, setUser }) {
         {/* </Typography> */}
         <Divider />
         {/* <Typography paragraph> */}
-          <Recipes />
+          <Recipes 
+          // ingredientList={ingredientList}
+          />
         {/* </Typography> */}
       </Box>
     </Box>

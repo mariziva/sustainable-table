@@ -17,11 +17,16 @@ def get_random_recipe
     render json: response
 end
 
-# def get_recipes_by_ingredients
-#     url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=#{ENV["api_key"]}"
-#     response = RestClient.get(url)
-#     render json: response
-# end
+def ingredientList
+    foodnames = @current_user.foods.map { |food| food.name }
+    ingredientList = foodnames.join(",+")
+end
+
+def get_recipes_by_ingredient
+    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredientList}&number=5&apiKey=#{ENV["api_key"]}"
+    response = RestClient.get(url)
+    render json: response
+end
 
 
 end
