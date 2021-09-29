@@ -79,12 +79,14 @@ export default function ClippedDrawer({ user, setUser }) {
   })
   .then(response => response.json())
   .then (data => onAddFood(data))
+  .then(window.location.reload())
   setFoodName("")
   setFoodCategory("")
   setFoodUnit("")
   setFoodDateOfPurchase(new Date())
   setFoodDaysUntilExpiration(0)
   setFoodQuantity(1)
+ 
   }
 
 

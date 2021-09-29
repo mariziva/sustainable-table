@@ -31,6 +31,7 @@ function FoodCard({ setfood, food, foods }) {
                 })
                 .then(response => response.json())
                 .then(data => onUpdateFood(data))
+                .then(setEditing(!editing))
         }
 
         function handleEdit(){
@@ -48,6 +49,18 @@ function FoodCard({ setfood, food, foods }) {
                 setfood(updatedFoodsArray)
         }
 
+        function deleteFood(id) {
+                const updatedFoods = foods.filter((food) => food.id !== id);
+                setfood(updatedFoods);
+              }
+
+        const handleDeleteClick = () => {
+                fetch(`foods/${food.id}`, {
+                        method: "DELETE",
+                });
+                deleteFood(food.id)        
+        }
+
 return (
         <Grid item sm>
         <p>{food.name} ({food.quantity} {food.unit})</p>
@@ -61,7 +74,7 @@ return (
                         <button type="submit" >Save</button>
                 </form>
         ) : (null)}
-        <button>Delete</button>
+        <button onClick={handleDeleteClick}>Delete</button>
         </Grid>
 )
 }
