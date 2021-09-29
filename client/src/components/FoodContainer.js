@@ -35,14 +35,6 @@ export default function ClippedDrawer({ user, setUser }) {
       .then(setfood);
   }, []);
 
-  function handleFoodUpdate (){
-    //function stuff 
-        }
-    
-  function addNewFood() {
-            //function stuff, form, also need button for submitting form.
-        }
-
   function handleLogoutClick(e) {
     e.preventDefault();
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -185,7 +177,7 @@ export default function ClippedDrawer({ user, setUser }) {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         {/* <Typography> */}
-          <Foods foods={foods} setfood={setfood} />
+          <Foods foods={foods} setfood={setfood}/>
         {/* </Typography> */}
         <Divider />
         {/* <Typography paragraph> */}

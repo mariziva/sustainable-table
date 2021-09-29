@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/randomrecipe', to: "recipes#get_random_recipe"
 
-  get '/recipesbyingredients', to: "recipes#get_recipes_by_ingredients"
+  # get '/recipesbyingredients', to: "recipes#get_recipes_by_ingredients"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
