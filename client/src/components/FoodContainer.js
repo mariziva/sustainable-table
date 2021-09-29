@@ -135,7 +135,7 @@ export default function ClippedDrawer({ user, setUser }) {
               value={foodUnit}
               onChange={(e) => setFoodUnit(e.target.value)}>
               </input>
-
+{/* would be great if this was a drop down: */}
               <input type="text"
               placeholder="category"
               value={foodCategory}
