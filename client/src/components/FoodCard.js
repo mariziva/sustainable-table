@@ -47,6 +47,7 @@ function FoodCard({ setfood, food, foods }) {
                                 }
                         })
                 setfood(updatedFoodsArray)
+                window.location.reload()
         }
 
         function deleteFood(id) {
