@@ -10,7 +10,7 @@ function Foods({ foods, setfood }){
 
       return(
           <Grid container spacing={6}>
-{sortedFoods.map(food => <FoodCard food={food} 
+{sortedFoods.map(food => <FoodCard food={food} foods={foods} setfood={setfood}
  />)}</Grid>)
 };
 
