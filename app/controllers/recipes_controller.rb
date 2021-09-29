@@ -11,10 +11,17 @@ class RecipesController < ApplicationController
 #     render json: recipe
 # end
 
-def get_recipes
+def get_random_recipe
     url = "https://api.spoonacular.com/recipes/random?apiKey=#{ENV["api_key"]}"
     response = RestClient.get(url)
     render json: response
 end
+
+def get_recipes_by_ingredients
+    url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=#{ENV["api_key"]}"
+    response = RestClient.get(url)
+    render json: response
+end
+
 
 end

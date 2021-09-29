@@ -12,10 +12,14 @@ function Recipes () {
        { setRecipes(recipes)
         setDisplayRecipes(true);})
         }, []);
-    // console.log(recipes.recipes[0].title)
 
 return (
-    <div> {displayRecipes ? <h1>{recipes.recipes[0].title} </h1>: <h1>Loading...</h1>}</div>
+    <div>
+        {displayRecipes ? 
+        <p>Here's what you should make: 
+            <br />
+        Here's a random recipe: {recipes.recipes[0].title} </p>: <p>Loading...</p>}
+        </div>
 )}
 
 
