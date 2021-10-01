@@ -13,6 +13,14 @@ function Recipes () {
     //     setDisplayRecipes(true);})
     //     }, []);
 
+    // ^^randomrecipe button
+
+    //could take the interpolation further to only do one fetch, but if i still need to do different controller actions then maybe it doesn't matter?
+
+    //one fetch could populate the meal planner, then filter results. display smaller card and click to open recipe link. heart/like to save to "my recipes" or whatever
+
+    //conditional for which fetch to use? 
+
         useEffect(() => {
             fetch("/recipesbyingredient")
             .then((response) => response.json())
