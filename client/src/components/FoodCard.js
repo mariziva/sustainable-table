@@ -3,6 +3,7 @@ import { useState } from "react";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 // render to different shelves and different shaped cards based on category as a stretch, view food card brings to front of page
 
@@ -80,7 +81,7 @@ function FoodCard({ setfood, food, foods }) {
         }
 
         const handleOpen = () => setOpen(true);
-        const handleClose = () => setOpen(false);
+        const handleClose = (e) => {e.stopPropagation(); setOpen(false);}
 
 return (
         <Grid item sm onClick={handleOpen}>
@@ -89,6 +90,7 @@ return (
                       onClose={handleClose}
                       aria-labelledby="modal-modal-title"
                       aria-describedby="modal-modal-description"
+                //       backdrop="static"
                     >
                       <Box sx={style}>
                         <Typography id="modal-modal-title" variant="h6" component="h2">
