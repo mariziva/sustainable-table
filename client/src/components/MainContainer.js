@@ -59,9 +59,9 @@ export default function ClippedDrawer({ user, setUser }) {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
-            href=""
+            href="/"
           >
-            <HomeIcon />
+            <HomeIcon  />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{flex: 1}}>
             Sustainable Table
