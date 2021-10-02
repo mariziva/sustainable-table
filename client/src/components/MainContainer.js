@@ -84,13 +84,9 @@ export default function ClippedDrawer({ user, setUser }) {
             <Button onClick={handleAddForm}>Add a food</Button>
             {addForm ? <NewFood foods={foods} setfood={setfood}/>:null}
             <Divider />
-            <Link to="/foods">
-            <Button>My Fridge</Button>
-            </Link>
+            <Button href="/foods">My Fridge</Button>
             <Divider />
-            <Link to="/recipes">
-            <Button>My Recipes</Button>
-            </Link>
+            <Button href="/recipes">My Recipes</Button>
             <Divider />
             <Button>Meal Planner</Button>
             <Divider />
