@@ -98,7 +98,9 @@ export default function ClippedDrawer({ user, setUser }) {
       <Switch>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        
+        <Route exact path="/">
+          <p>landing page idk</p>
+          </Route>
         <Route exact path="/foods">
         <Typography>
           <Foods foods={foods} setfood={setfood}/>
