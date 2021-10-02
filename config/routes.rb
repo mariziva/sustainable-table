@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  get "/foods", to: "foods#index"
+  # get "/recipes", to: "recipes#index"
+
   get '/randomrecipe', to: "recipes#get_random_recipe"
 
   get '/recipesbyingredient', to: "recipes#get_recipes_by_ingredient"

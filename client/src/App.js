@@ -1,5 +1,5 @@
 import './App.css'
-import FoodContainer from './components/FoodContainer'
+import FoodContainer from './components/MainContainer'
 import Login from './components/Login'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -19,11 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Switch>
-      <Router path=""> */}
       <FoodContainer user={user} setUser={setUser} />
-      {/* </Router>
-      </Switch> */}
     </div>
   );
 }
