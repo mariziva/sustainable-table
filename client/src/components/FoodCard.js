@@ -1,5 +1,8 @@
 import Grid from '@mui/material/Grid';
 import { useState } from "react";
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 // render to different shelves and different shaped cards based on category as a stretch, view food card brings to front of page
 
@@ -12,6 +15,8 @@ function FoodCard({ setfood, food, foods }) {
         const [updatedDaysUntilExpiration, setUpdatedDaysUntilExpiration] = useState(food.days_until_expiration)
         const [updatedDateOfPurchase, setUpdatedDateOfPurchase] = useState(food.date_of_purchase)
         const [editing, setEditing] = useState(false)
+        const [open, setOpen] = useState(false);
+
 
         const updateFood = (e) => {
                 e.preventDefault();
@@ -62,8 +67,26 @@ function FoodCard({ setfood, food, foods }) {
                 deleteFood(food.id)        
         }
 
+        const handleOpen = () => setOpen(true);
+        const handleClose = () => setOpen(false);
+
 return (
-        <Grid item sm>
+        <Grid item sm onClick={handleOpen}>
+        <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                          Text in a modal
+                        </Typography>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        </Typography>
+                      </Box>
+                    </Modal>
         <p>{food.name} ({food.quantity} {food.unit})</p>
         <p>{food.days_until_expiration} days to use</p>
         <button onClick={handleEdit}>Edit</button>
