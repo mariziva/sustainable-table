@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
 ##can probably pull out the params to make things cleaner--one based on what is in fridge overall, what uses things expiring soonest, etc.
 
 def index
-    recipes = Recipes.all
+    recipes = Recipe.all
     render json: recipes
 end
 
