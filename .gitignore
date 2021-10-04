@@ -4,3 +4,5 @@
 
 # Ignore application configuration
 /config/application.yml
+
+/log/development.log
