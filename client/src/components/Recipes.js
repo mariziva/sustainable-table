@@ -6,6 +6,7 @@ function Recipes () {
 
     const [recipes, setRecipes] = useState([]);
     const [displayRecipes, setDisplayRecipes] = useState(false)
+    
 
     // useEffect(() => {
     //     fetch("/randomrecipe")

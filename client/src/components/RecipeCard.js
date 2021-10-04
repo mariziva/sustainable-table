@@ -7,7 +7,31 @@ import Button from '@mui/material/Button';
 
 
 
-function RecipeCard({recipe}) {
+function RecipeCard({recipe, myRecipes, setMyRecipes}) {
+
+    const [myRecipeTitle, setMyRecipeTitle] = useState("")
+
+
+    function handlePostToMyRecipes(e){
+        e.preventDefault();
+        fetch ("/recipes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: myRecipeTitle,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => onAddRecipe(data))
+        .then(window.location.reload())
+    }
+
+    function onAddRecipe(newRecipe){
+        const updatedRecipesArray = [...myRecipes, newRecipe]
+        setMyRecipes(updatedRecipesArray)
+    }
 
     const [open, setOpen] = useState(false);
 
@@ -43,6 +67,7 @@ function RecipeCard({recipe}) {
         </Box>
         </Modal>
         <p>{recipe.title}</p>
+        <Button onClick={handlePostToMyRecipes}>Click to add to your Meal Planner</Button>
         </Grid>
     )
 }

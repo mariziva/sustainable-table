@@ -6,10 +6,10 @@ class RecipesController < ApplicationController
 
 ##can probably pull out the params to make things cleaner--one based on what is in fridge overall, what uses things expiring soonest, etc.
 
-# def index
-#     recipe = Recipe.all
-#     render json: recipe
-# end
+def index
+    recipe = Recipe.all
+    render json: recipe
+end
 
 def get_random_recipe
     url = "https://api.spoonacular.com/recipes/random?apiKey=#{ENV["api_key"]}"

@@ -20,6 +20,7 @@ import {
   Switch, Route, Link
 } from "react-router-dom";
 import Home from './Home'
+import MealPlan from './MealPlan'
 
 const drawerWidth = 240;
 
@@ -27,7 +28,7 @@ export default function ClippedDrawer({ user, setUser }) {
 
   const [foods, setfood] = useState([])
   const [addForm, setAddForm] = useState(false)
-
+  const [myRecipes, setMyRecipes] = useState([])
 
   useEffect(() => {
     fetch("/foods")
@@ -89,7 +90,7 @@ export default function ClippedDrawer({ user, setUser }) {
             <Divider />
             <Button href="/recipes">My Recipes</Button>
             <Divider />
-            <Button>Meal Planner</Button>
+            <Button href="/mealplanner">Meal Planner</Button>
             <Divider />
             <Button>Grocery List</Button>
           </List>
@@ -107,12 +108,20 @@ export default function ClippedDrawer({ user, setUser }) {
           <Foods foods={foods} setfood={setfood}/>
         </Typography>
         </Route>
-        <Route exact path="/recipes">
+        <Route exact path="/recipes"
+        myRecipes={myRecipes} setMyRecipes={setMyRecipes}>
         <Typography paragraph>
           <Recipes />
         </Typography>
         </Route>
-        
+        <Route exact path= "/mealplanner">
+          <Typography paragraph>
+            <MealPlan myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>
+            </Typography>
+
+        </Route>
+
+
       </Box>
       </Switch>
     </Box>
