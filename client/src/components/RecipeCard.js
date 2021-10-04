@@ -5,12 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-
-
 function RecipeCard({recipe, myRecipes, setMyRecipes}) {
-
-    const [myRecipeTitle, setMyRecipeTitle] = useState("")
-
 
     function handlePostToMyRecipes(e){
         e.preventDefault();
@@ -20,12 +15,12 @@ function RecipeCard({recipe, myRecipes, setMyRecipes}) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                title: myRecipeTitle,
+                name : recipe.title,
             }),
         })
         .then(response => response.json())
         .then(data => onAddRecipe(data))
-        .then(window.location.reload())
+        // .then(window.location.reload())
     }
 
     function onAddRecipe(newRecipe){

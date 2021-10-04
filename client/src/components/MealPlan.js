@@ -1,7 +1,7 @@
 function MealPlan ({ myRecipes, setMyRecipes }) {
 
     return(
-        myRecipes.map(recipe => recipe.title)
+        myRecipes.map(recipe => recipe.name)
     )
 
 }

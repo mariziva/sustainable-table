@@ -7,8 +7,13 @@ class RecipesController < ApplicationController
 ##can probably pull out the params to make things cleaner--one based on what is in fridge overall, what uses things expiring soonest, etc.
 
 def index
-    recipe = Recipe.all
-    render json: recipe
+    recipes = Recipes.all
+    render json: recipes
+end
+
+def create
+    recipe = Recipe.create(recipe_params)
+    render json: recipe, status: :created
 end
 
 def get_random_recipe
@@ -26,6 +31,12 @@ def get_recipes_by_ingredient
     url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredientList}&number=5&apiKey=#{ENV["api_key"]}"
     response = RestClient.get(url)
     render json: response
+end
+
+private
+
+def recipe_params
+    params.permit(:id, :name, :description, :ingredients)
 end
 
 

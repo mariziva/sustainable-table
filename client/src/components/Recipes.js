@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import Grid from "@mui/material/Grid"
+import Button from "@mui/material/Button"
 
-function Recipes () {
+function Recipes ({myRecipes, setMyRecipes}) {
 
     const [recipes, setRecipes] = useState([]);
     const [displayRecipes, setDisplayRecipes] = useState(false)
+
     
 
     // useEffect(() => {
@@ -39,7 +41,7 @@ return (
             <br />
         <Grid container spacing={6}>
         
-            {recipes.map(recipe => <RecipeCard recipe={recipe}/>)}
+            {recipes.map(recipe => <RecipeCard recipe={recipe} myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>)}
             {/* <br />
         Here's a random recipe: {recipes.recipes[0].title} */}
          
