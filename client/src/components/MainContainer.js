@@ -19,6 +19,7 @@ import {
   BrowserRouter as Router,
   Switch, Route, Link
 } from "react-router-dom";
+import Home from './Home'
 
 const drawerWidth = 240;
 
@@ -99,7 +100,7 @@ export default function ClippedDrawer({ user, setUser }) {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Route exact path="/">
-          <p>landing page idk</p>
+          <Home />
           </Route>
         <Route exact path="/foods">
         <Typography>
