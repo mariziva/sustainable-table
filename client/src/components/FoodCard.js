@@ -84,7 +84,7 @@ function FoodCard({ setfood, food, foods }) {
         const handleClose = (e) => {e.stopPropagation(); setOpen(false);}
 
 return (
-        <Grid item sm >
+        <Grid item xs={3}>
         <Modal
                       open={open}
                       onClose={handleClose}
