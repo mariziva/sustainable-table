@@ -15,8 +15,8 @@ code {
 .homepage {
   background: 
   linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
     ),
   url(./38724494391_37f32e4ea4_b.jpg) no-repeat center; 
   -webkit-background-size: cover;

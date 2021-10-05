@@ -36,7 +36,7 @@ end
 private
 
 def recipe_params
-    params.permit(:id, :name, :description, :ingredients)
+    params.permit(:id, :name, :description, :ingredients, food_ids: [])
 end
 
 
