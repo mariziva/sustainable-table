@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import StyledLoginForm from "./StyledLoginForm";
+import StyledSignUpForm from "./StyledSignUpForm";
 
 function Login({ onLogin }) {
 
@@ -14,9 +14,7 @@ function Login({ onLogin }) {
           </>
           ) : (
             <>
-            <SignUpForm onLogin={onLogin} />
-            <br />
-            Already have an account? <button onClick={()=> setShowLogin(true)}>Log in</button>
+            <StyledSignUpForm setShowLogin={setShowLogin} onLogin={onLogin} />
             </>
           )
         )}
