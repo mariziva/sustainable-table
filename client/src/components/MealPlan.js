@@ -8,7 +8,7 @@ fetch("/recipes")
 .then(myRecipes => setMyRecipes(myRecipes))}, [])
 
     return(
-        myRecipes.map(recipe => recipe.name)
+        myRecipes.map(recipe => <p>{recipe.name}</p>)
     )
 
 }

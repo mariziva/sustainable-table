@@ -84,7 +84,7 @@ function FoodCard({ setfood, food, foods }) {
         const handleClose = (e) => {e.stopPropagation(); setOpen(false);}
 
 return (
-        <Grid item sm onClick={handleOpen}>
+        <Grid item sm >
         <Modal
                       open={open}
                       onClose={handleClose}
@@ -103,6 +103,7 @@ return (
                     </Modal>
         <p>{food.name} ({food.quantity} {food.unit})</p>
         <p>{food.days_until_expiration} days to use</p>
+        <Button onClick={handleOpen}>See more info</Button>
         <button onClick={handleEdit}>Edit</button>
         {editing ? (
                 <form onSubmit={updateFood}>
