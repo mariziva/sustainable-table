@@ -31,8 +31,8 @@ Food.create(name: 'baguette', quantity: 3, unit: 'baguettes', category: 'bakery'
 Food.create(name: 'cookie', quantity: 30, unit: 'cookies', category: 'bakery', days_until_expiration: 3, date_of_purchase: Date.today-2, user_id: 1)
 
 
-Recipe.create(name: 'chicken salad', description: 'chicken salad w veggies and a sour cream sauce served on a baguette', ingredients: 'baguette, sour cream, chicken, lemon, mayonnaise, dill')
-Recipe.create(name: 'eggplant parmesan', description: 'eggplant parm w lemon', ingredients: 'eggplant, parsley, parmesan cheese, breadcrumbs')
+Recipe.create(name: 'chicken salad', description: 'chicken salad w veggies and a sour cream sauce served on a baguette', ingredients: 'baguette, sour cream, chicken, lemon, mayonnaise, dill', user_id: 1)
+Recipe.create(name: 'eggplant parmesan', description: 'eggplant parm w lemon', ingredients: 'eggplant, parsley, parmesan cheese, breadcrumbs', user_id: 1)
 
 
 User.create(name: 'mari', username: 'maritaksa', password: 'password')

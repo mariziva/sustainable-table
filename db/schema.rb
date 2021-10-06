@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 2021_09_23_145632) do
     t.string "name"
     t.string "description"
     t.string "ingredients"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

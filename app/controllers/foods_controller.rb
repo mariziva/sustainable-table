@@ -10,6 +10,15 @@ def create
     render json: food, status: :created
 end
 
+def show
+    food = @current_user.foods.find(food_params)
+    if food
+    render json: food, status: :ok
+    else
+    render json: {error:"Food not found"}, status: :not_found
+    end
+end
+
 def update
     food = Food.find(params[:id])
     if food

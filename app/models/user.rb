@@ -4,4 +4,5 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true
 
     has_many :foods
+    has_many :recipes
 end

@@ -7,13 +7,22 @@ class RecipesController < ApplicationController
 ##can probably pull out the params to make things cleaner--one based on what is in fridge overall, what uses things expiring soonest, etc.
 
 def index
-    recipes = Recipe.all
+    recipes = @current_user.recipes.all
     render json: recipes
 end
 
 def create
-    recipe = Recipe.create(recipe_params)
+    recipe = @current_user.recipes.create!(recipe_params)
     render json: recipe, status: :created
+end
+
+def show
+    recipe = @current_user.recipes.find(recipe_params)
+    if recipe
+        render json: recipe, status: :ok
+    else
+        render json: {error:"Recipe not found"}, status: :not_found
+end
 end
 
 def get_random_recipe
@@ -36,7 +45,7 @@ end
 private
 
 def recipe_params
-    params.permit(:id, :name, :description, :ingredients, food_ids: [])
+    params.permit(:id, :name, :description, :ingredients)
 end
 
 
