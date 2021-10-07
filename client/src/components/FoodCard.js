@@ -94,7 +94,8 @@ return (
                     >
                       <Box sx={style}>
                         <Typography id="modal-modal-title" variant="h6" component="h2">
-                          {food.name}
+                        {food.name} < br /> ({food.quantity} {food.unit})< br />
+        {food.days_until_expiration} days to use
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         <button onClick={handleEdit}>Edit</button>
@@ -126,8 +127,8 @@ return (
                         </Typography>
                       </Box>
                     </Modal>
-        <p>{food.name} ({food.quantity} {food.unit})</p>
-        <p>{food.days_until_expiration} days to use</p>
+        <p>{food.name}</p>
+        
         <Button onClick={handleOpen}>See more info</Button>
         
         </Grid>
