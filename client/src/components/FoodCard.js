@@ -97,23 +97,39 @@ return (
                           {food.name}
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          {food.quantity}
+                        <button onClick={handleEdit}>Edit</button>
+        {editing ? (
+                <form onSubmit={updateFood}>
+                        <input type="text" placeholder="name"
+                        value={updatedName}
+                        onChange={(e) => setUpdatedName(e.target.value)}/>
+                        <input type="integer" placeholder="quantity"
+                        value={updatedQuantity}
+                        onChange={(e) => setUpdatedQuantity(e.target.value)}/>
+                        <input type="text" placeholder="unit"
+                        value={updatedUnit}
+                        onChange={(e) => setUpdatedUnit(e.target.value)}/>
+                        <input type="category" placeholder="category"
+                        value={updatedCategory}
+                        onChange={(e) => setUpdatedCategory(e.target.value)}/>
+                        <input type="integer" placeholder="days until expiration"
+                        value={updatedDaysUntilExpiration}
+                        onChange={(e) => setUpdatedDaysUntilExpiration(e.target.value)}/>
+                        <input type="DateTime" placeholder="date of purchase"
+                        value={updatedDateOfPurchase}
+                        onChange={(e) => setUpdatedDateOfPurchase(e.target.value)}/>
+
+                        <button type="submit" >Save</button>
+                </form>
+        ) : (null)}
+        <button onClick={handleDeleteClick}>Delete</button>
                         </Typography>
                       </Box>
                     </Modal>
         <p>{food.name} ({food.quantity} {food.unit})</p>
         <p>{food.days_until_expiration} days to use</p>
         <Button onClick={handleOpen}>See more info</Button>
-        <button onClick={handleEdit}>Edit</button>
-        {editing ? (
-                <form onSubmit={updateFood}>
-                        <input type="text" placeholder="name"
-                        value={updatedName}
-                        onChange={(e) => setUpdatedName(e.target.value)}/>
-                        <button type="submit" >Save</button>
-                </form>
-        ) : (null)}
-        <button onClick={handleDeleteClick}>Delete</button>
+        
         </Grid>
 )
 }
