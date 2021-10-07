@@ -42,7 +42,7 @@ end
 private
 
 def food_params
-    params.permit(:name, :category, :unit, :quantity, :days_until_expiration, :date_of_purchase)
+    params.permit(:name, :category, :unit, :quantity, :days_until_expiration, :date_of_purchase, :image_url)
 end
 
 

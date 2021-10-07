@@ -8,6 +8,7 @@ function NewFood({foods, setfood}) {
     const [foodCategory, setFoodCategory] = useState("")
     const [foodDaysUntilExpiration, setFoodDaysUntilExpiration] = useState("")
     const [foodDateOfPurchase, setFoodDateOfPurchase] = useState("")
+    const [foodImageUrl, setFoodImageUrl] = useState("")
 
     function handleSubmit (e){
         e.preventDefault();
@@ -22,7 +23,8 @@ function NewFood({foods, setfood}) {
             unit: foodUnit,
             category: foodCategory,
             days_until_expiration: foodDaysUntilExpiration,
-            date_of_purchase: foodDateOfPurchase
+            date_of_purchase: foodDateOfPurchase,
+            image_url: foodImageUrl
           }),
       })
       .then(response => response.json())
@@ -34,6 +36,7 @@ function NewFood({foods, setfood}) {
       setFoodDateOfPurchase(new Date())
       setFoodDaysUntilExpiration(0)
       setFoodQuantity(1)
+      setFoodImageUrl("")
      
       }
 
@@ -72,6 +75,12 @@ function NewFood({foods, setfood}) {
         placeholder="days until expiration"
         value={foodDaysUntilExpiration}
         onChange={(e) => setFoodDaysUntilExpiration(e.target.value)}>
+        </input>
+
+        <input type="text"
+        placeholder="image url"
+        value={foodImageUrl}
+        onChange={(e) => setFoodImageUrl(e.target.value)}>
         </input>
 
         <br />
