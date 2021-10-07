@@ -13,8 +13,8 @@ function FoodCard({ setfood, food, foods }) {
         const Img = styled('img')({
                 margin: 'auto',
                 display: 'block',
-                maxWidth: '100%',
-                maxHeight: '100%',
+                maxWidth: '100px',
+                maxHeight: '100px',
               });
 
         const [updatedName, setUpdatedName] = useState(food.name)
@@ -138,7 +138,7 @@ return (
         <Img src={food.image_url} alt={food.name}></Img>
         <br />
         {food.name}
-        
+        <br />
         <Button onClick={handleOpen}>see more</Button>
         
         </Grid>

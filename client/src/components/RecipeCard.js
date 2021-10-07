@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 
 function RecipeCard({recipe, myRecipes, setMyRecipes}) {
 
+    const [recipeCard, setRecipeCard] = useState([])
+
     function handlePostToMyRecipes(e){
         e.preventDefault();
         fetch ("/recipes", {
@@ -45,6 +47,12 @@ function RecipeCard({recipe, myRecipes, setMyRecipes}) {
       const handleOpen = () => setOpen(true);
         const handleClose = (e) => {e.stopPropagation(); setOpen(false);}
 
+      function createStyledFoodCard(recipe){
+        fetch(`https://api.spoonacular.com/recipes/${recipe.id}/card`)
+        .then(response => response.json())
+        .then(card => setRecipeCard(card))
+      }
+
     return (
         <Grid item sm onClick={handleOpen}>
             <Modal
@@ -61,6 +69,7 @@ function RecipeCard({recipe, myRecipes, setMyRecipes}) {
                         </Typography>
         </Box>
         </Modal>
+        {createStyledFoodCard(recipe)}
         <p>{recipe.title}</p>
         <Button onClick={handlePostToMyRecipes}>Click to add to your Meal Planner</Button>
         </Grid>
