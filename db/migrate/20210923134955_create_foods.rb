@@ -8,6 +8,7 @@ class CreateFoods < ActiveRecord::Migration[6.1]
       t.belongs_to :user
       t.string :unit
       t.string :name
+      t.string :image_url
 
       t.timestamps
     end

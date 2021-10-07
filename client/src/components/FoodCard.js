@@ -127,9 +127,10 @@ return (
                         </Typography>
                       </Box>
                     </Modal>
-        <p>{food.name}</p>
+        <img src={food.image_url} alt={food.name}></img>
+        {food.name}
         
-        <Button onClick={handleOpen}>See more info</Button>
+        <Button onClick={handleOpen}>see more</Button>
         
         </Grid>
 )

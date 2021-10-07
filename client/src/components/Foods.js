@@ -8,7 +8,7 @@ function Foods({ foods, setfood }){
 
       return(
           <Grid container spacing={6}>
-{sortedFoods.map(food => <FoodCard food={food} foods={foods} setfood={setfood}
+{sortedFoods.map(food => <FoodCard food={food} foods={foods} setfood={setfood} key={food.id}
  />)}</Grid>)
 };
 

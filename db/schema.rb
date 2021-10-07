@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_09_23_145632) do
     t.bigint "user_id"
     t.string "unit"
     t.string "name"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
