@@ -110,14 +110,14 @@ export default function ClippedDrawer({ user, setUser }) {
         </Route>
         <Route exact path="/recipes"
         myRecipes={myRecipes} setMyRecipes={setMyRecipes}>
-        <Typography paragraph>
+        {/* <Typography paragraph> */}
           <Recipes myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>
-        </Typography>
+        {/* </Typography> */}
         </Route>
         <Route exact path= "/mealplanner">
-          <Typography paragraph>
+          {/* <Typography paragraph> */}
             <MealPlan myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>
-            </Typography>
+            {/* </Typography> */}
 
         </Route>
 

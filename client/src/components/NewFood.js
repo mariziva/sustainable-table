@@ -50,6 +50,12 @@ function NewFood({foods, setfood}) {
         onChange={(e) => setFoodName(e.target.value)}>
         </input>
 
+        <input type="integer"
+        placeholder="quantity"
+        value={foodQuantity}
+        onChange={(e) => setFoodQuantity(e.target.value)}>
+        </input>
+
         <input type="text"
         placeholder="unit"
         value={foodUnit}
@@ -66,12 +72,6 @@ function NewFood({foods, setfood}) {
         placeholder="days until expiration"
         value={foodDaysUntilExpiration}
         onChange={(e) => setFoodDaysUntilExpiration(e.target.value)}>
-        </input>
-
-        <input type="integer"
-        placeholder="quantity"
-        value={foodQuantity}
-        onChange={(e) => setFoodQuantity(e.target.value)}>
         </input>
 
         <br />
