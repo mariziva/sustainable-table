@@ -4,10 +4,18 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 
 // render to different shelves and different shaped cards based on category as a stretch, view food card brings to front of page
 
 function FoodCard({ setfood, food, foods }) {
+
+        const Img = styled('img')({
+                margin: 'auto',
+                display: 'block',
+                maxWidth: '100%',
+                maxHeight: '100%',
+              });
 
         const [updatedName, setUpdatedName] = useState(food.name)
         const [updatedQuantity, setUpdatedQuantity] = useState(food.quantity)
@@ -127,7 +135,8 @@ return (
                         </Typography>
                       </Box>
                     </Modal>
-        <img src={food.image_url} alt={food.name}></img>
+        <Img src={food.image_url} alt={food.name}></Img>
+        <br />
         {food.name}
         
         <Button onClick={handleOpen}>see more</Button>
