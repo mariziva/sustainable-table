@@ -139,6 +139,8 @@ return (
         <br />
         {food.name}
         <br />
+        {food.days_until_expiration} {food.days_until_expiration>=2 ? "days":"day"} to use
+        <br />
         <Button onClick={handleOpen}>see more</Button>
         
         </Grid>
