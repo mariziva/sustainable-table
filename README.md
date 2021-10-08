@@ -13,12 +13,19 @@ Users can view their foods, add/edit/delete foods in their inventory, view sugge
 
 ## Future Updates
 -Grocery list feature populated by the user's meal plan + current inventory
+
 -Optimization of returned recipes
+
 -Diet restrictions + cuisine preferences included
+
 -Activity report of what percentage of food was used
+
 -Recipes with easy substitutions are rendered (if you have lentils but not ground beef, a recipe using ground beef will still return)
+
 -User dietary or palate goals to better inform recipe return
+
 -Improved food and recipe display, including search and filter
+
 -And so much more!
 
 ## Contact
