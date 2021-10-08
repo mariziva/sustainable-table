@@ -47,7 +47,7 @@ def ingredientList
 end
 
 def get_recipes_by_ingredient
-    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredientList}&number=5&apiKey=#{ENV["api_key"]}"
+    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{ingredientList}&number=8&apiKey=#{ENV["api_key"]}"
     response = RestClient.get(url)
     render json: response
 end

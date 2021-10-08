@@ -103,7 +103,7 @@ return (
                       <Box sx={style}>
                         <Typography id="modal-modal-title" variant="h6" component="h2">
                         {food.name} < br /> ({food.quantity} {food.unit})< br />
-        {food.days_until_expiration} days to use
+                        {food.days_until_expiration} {food.days_until_expiration>=2 ? "days":"day"} to use
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         <button onClick={handleEdit}>Edit</button>
