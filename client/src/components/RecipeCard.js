@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -47,11 +47,11 @@ function RecipeCard({recipe, myRecipes, setMyRecipes}) {
       const handleOpen = () => setOpen(true);
         const handleClose = (e) => {e.stopPropagation(); setOpen(false);}
 
-      function createStyledFoodCard(recipe){
-        fetch(`https://api.spoonacular.com/recipes/${recipe.id}/card`)
-        .then(response => response.json())
-        .then(card => setRecipeCard(card))
-      }
+    //   useEffect(() => {
+    //     fetch("/getrecipecard")
+    //     //   .then((r) => r.json())
+    //       .then(setRecipeCard);
+    //   }, []);
 
     return (
         <Grid item sm onClick={handleOpen}>
@@ -62,14 +62,15 @@ function RecipeCard({recipe, myRecipes, setMyRecipes}) {
                       aria-describedby="modal-modal-description">
         <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-                          {recipe.title}
+                        {recipe.title}
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          text
+                        This recipe uses {recipe.usedIngredientCount} items in your fridge!
                         </Typography>
         </Box>
         </Modal>
-        {createStyledFoodCard(recipe)}
+        {/* <img src={recipeCard} /> */}
+        <img src={recipe.image} />
         <p>{recipe.title}</p>
         <Button onClick={handlePostToMyRecipes}>Click to add to your Meal Planner</Button>
         </Grid>

@@ -39,6 +39,7 @@ return (
         {displayRecipes ? 
         <p>Here's what you should make:
             <br />
+            <br />
         <Grid container spacing={6}>
         
             {recipes.map(recipe => <RecipeCard recipe={recipe} myRecipes={myRecipes} setMyRecipes={setMyRecipes}/>)}
