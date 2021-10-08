@@ -1,6 +1,6 @@
-# SUSTAINABLE TABLE
-
-# Because we all have zucchini rotting in our fridge.
+<h1 align="center">SUSTAINABLE TABLE
+  <br />
+  Because we all have zucchini rotting in our fridge.</h2>
 
 ## Description
 
