@@ -1,6 +1,8 @@
 <h1 align="center">SUSTAINABLE TABLE
   <br />
   Because we all have zucchini rotting in our fridge.</h2>
+  
+  <a href="https://drive.google.com/file/d/1hHyfXwn3Uix5mvc95Tw1sg2zEccCbdiZ/view?t=1h7m45s">View a video presentation of this project</a>
 
 ## Description
 
